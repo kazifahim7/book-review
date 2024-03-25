@@ -1,5 +1,9 @@
 
 import { useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+import { setBookById } from "../utility/localStorage";
 
 
 const Details = () => {
@@ -8,6 +12,11 @@ const Details = () => {
     const num = parseInt(bookId);
     const book = allBooks.find((books) => books.bookId === num);
     console.log(book);
+    const handleClick = ()=>{
+        
+        setBookById(num)
+        
+    }
 
     return (
         <div className="md:container mx-auto my-24">
@@ -34,7 +43,8 @@ const Details = () => {
                         <p className="space-x-2"> <span>Rating: </span>   <strong>{book.rating}</strong></p>
                     </div>
                     <div className="card-actions justify-start">
-                        <button className="btn btn-outline">Read</button>
+                        <button onClick={handleClick} className="btn btn-outline">Read</button>
+                        <ToastContainer></ToastContainer>
                         <button className="btn btn-primary">Wishlist</button>
                     </div>
                 </div>
