@@ -1,0 +1,80 @@
+[
+    {
+      "bookId": 1,
+      "bookName": "The Silent Patient",
+      "author": "Alex Michaelides",
+      "image": "https://example.com/silent_patient.jpg",
+      "review": "A gripping psychological thriller that keeps you on the edge of your seat until the very end.",
+      "totalPages": 336,
+      "rating": 4.5,
+      "category": "Mystery",
+      "tags": ["Suspense", "Psychological"],
+      "publisher": "Celadon Books",
+      "yearOfPublishing": 2019
+    },
+    {
+      "bookId": 2,
+      "bookName": "Educated",
+      "author": "Tara Westover",
+      "image": "https://example.com/educated.jpg",
+      "review": "A compelling memoir about the power of education and the resilience of the human spirit.",
+      "totalPages": 334,
+      "rating": 4.7,
+      "category": "Memoir",
+      "tags": ["Biography", "Inspiration"],
+      "publisher": "Random House",
+      "yearOfPublishing": 2018
+    },
+    {
+      "bookId": 3,
+      "bookName": "The Night Circus",
+      "author": "Erin Morgenstern",
+      "image": "https://example.com/night_circus.jpg",
+      "review": "An enchanting tale of love, magic, and mystery set within the mesmerizing world of a magical circus.",
+      "totalPages": 387,
+      "rating": 4.6,
+      "category": "Fantasy",
+      "tags": ["Magic", "Romance"],
+      "publisher": "Doubleday",
+      "yearOfPublishing": 2011
+    },
+    {
+      "bookId": 4,
+      "bookName": "Atomic Habits",
+      "author": "James Clear",
+      "image": "https://example.com/atomic_habits.jpg",
+      "review": "A practical guide to building good habits and breaking bad ones, backed by scientific research and real-life examples.",
+      "totalPages": 320,
+      "rating": 4.8,
+      "category": "Self-Help",
+      "tags": ["Productivity", "Habit Formation"],
+      "publisher": "Avery",
+      "yearOfPublishing": 2018
+    },
+    {
+      "bookId": 5,
+      "bookName": "Dune",
+      "author": "Frank Herbert",
+      "image": "https://example.com/dune.jpg",
+      "review": "An epic science fiction masterpiece that combines political intrigue, adventure, and philosophical depth.",
+      "totalPages": 604,
+      "rating": 4.9,
+      "category": "Science Fiction",
+      "tags": ["Space Opera", "Political Intrigue"],
+      "publisher": "Chilton Books",
+      "yearOfPublishing": 1965
+    },
+    {
+      "bookId": 6,
+      "bookName": "Becoming",
+      "author": "Michelle Obama",
+      "image": "https://example.com/becoming.jpg",
+      "review": "An inspiring memoir that offers an intimate look into the life of former First Lady Michelle Obama and her journey of self-discovery.",
+      "totalPages": 426,
+      "rating": 4.7,
+      "category": "Biography",
+      "tags": ["Inspiration", "Empowerment"],
+      "publisher": "Crown Publishing Group",
+      "yearOfPublishing": 2018
+    }
+  ]
