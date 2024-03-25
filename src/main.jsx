@@ -11,6 +11,7 @@ import Home from './Pages/Home';
 import Details from './Pages/Details';
 import BestWriter from './components/BestWriter';
 import NewBook from './components/Newbook';
+import BookList from './Pages/BookList';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,8 +35,12 @@ const router = createBrowserRouter([
       },
       {
         path: '/upcoming',
-        element : <NewBook></NewBook>
+        element : <NewBook></NewBook>,
 
+      },
+      {
+        path:'/listed',
+        element : <BookList></BookList>,
       }
 
 

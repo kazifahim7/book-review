@@ -1,6 +1,6 @@
 
 import { useLoaderData, useParams } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 import { setBookById } from "../utility/localStorage";
@@ -16,6 +16,9 @@ const Details = () => {
         
         setBookById(num)
         
+    }
+    const handleCLick2 =()=>{
+        setBookById(num)
     }
 
     return (
@@ -45,7 +48,8 @@ const Details = () => {
                     <div className="card-actions justify-start">
                         <button onClick={handleClick} className="btn btn-outline">Read</button>
                         <ToastContainer></ToastContainer>
-                        <button className="btn btn-primary">Wishlist</button>
+                        <button onClick={handleCLick2} className="btn btn-primary">Wishlist</button>
+                        <ToastContainer></ToastContainer>
                     </div>
                 </div>
             </div>
