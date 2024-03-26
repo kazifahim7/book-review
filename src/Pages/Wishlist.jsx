@@ -2,22 +2,64 @@ import { useEffect, useState } from "react";
 import { getWishBooks } from "../utility/wish";
 import { useLoaderData } from "react-router-dom";
 import WishStore from "../components/WishStore";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 
 const Wishlist = () => {
     const books = useLoaderData()
     const [wish, setWish] = useState([])
+    const [sort, setSort] = useState("rating")
+   
     useEffect(() => {
         if (Array.isArray(books)) { 
             const storedWishBooks = getWishBooks();
             const exists = books.filter((book) => storedWishBooks.includes(book.bookId));
-            setWish(exists);
+            if(sort==="rating"){
+                setWish(exists.sort((a, b) => b.rating -  a.rating))
+
+            }
+            else{
+                setWish(exists)
+            }
+            
         } else {
             setWish([]); 
         }
-    }, [books]);
+    }, [books,sort]);
+    
+    const handleSort =(text)=>{
+        setSort(text)
+
+    }
+   
+
+
+
     return (
         <div>
+
+
+
+            <div>
+                <div className="items-center flex justify-center">
+                    <details className="dropdown">
+                        <summary className="m-1 btn bg-[#23BE0A]">
+                            Sort By <IoMdArrowDropdown />
+                        </summary>
+                        <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                            <li>
+                                <button onClick={() => handleSort("rating")}>Rating</button>
+                            </li>
+                            <li>
+                                <button onClick={() => handleSort("totalPages")}>Number of pages</button>
+                            </li>
+                            <li>
+                                <button onClick={() => handleSort("yearOfPublishing")}>Publisher year</button>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+            </div>
 
             <div className="mt-8 ">
 

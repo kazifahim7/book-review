@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { IoMdArrowDropdown } from "react-icons/io";
+
 import { Link, Outlet } from "react-router-dom";
 
 
@@ -13,17 +13,8 @@ const BookList = () => {
             <div className="p-10 bg-gray-200 container mx-auto rounded-lg">
                 <p className="text-3xl font-bold text-center">Books</p>
             </div>
-             <div className="items-center flex justify-center">
-                <details className="dropdown">
-                    <summary className="m-1 btn bg-[#23BE0A]">Sort By   <IoMdArrowDropdown /></summary>
-                    <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-                        <li><a>Rating</a></li>
-                        <li><a>Number of pages</a></li>
-                        <li><a>Publisher year</a></li>
-                    </ul>
-                </details>
-            </div>
-            <div className="flex items-center ml-10  overflow-x-auto overflow-y-hidden justify-start flex-nowrap text-black">
+           
+            <div className="flex items-center ml-10  mt-4 overflow-x-auto overflow-y-hidden justify-start flex-nowrap text-black">
                 <Link to=''  onClick={() => setActive(true)}
 
 
