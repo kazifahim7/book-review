@@ -12,9 +12,11 @@ const Chart = () => {
     const readBooks = useLoaderData();
 
     useEffect(() => {
-        const storedReadBooks = getReadBooks();
-        const matchedBooks = readBooks.filter(book => storedReadBooks.includes(book.bookId));
-        setBooksData(matchedBooks);
+        if (Array.isArray(readBooks)) {
+            const storedReadBooks = getReadBooks();
+            const matchedBooks = readBooks.filter((book) => storedReadBooks.includes(book.bookId));
+            setBooksData(matchedBooks);
+        }
     }, [readBooks]);
 
     const getPath = (x, y, width, height) => {
@@ -31,7 +33,7 @@ const Chart = () => {
     };
 
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto  flex justify-center items-center">
             <BarChart
                 width={700}
                 height={300}
@@ -43,7 +45,7 @@ const Chart = () => {
                 <YAxis />
                 <Tooltip />
                 <Bar dataKey="totalPages" fill="#8884d8" shape={<TriangleBar />}>
-                    {booksData.map((entry, index) => (
+                    {booksData.map((get, index) => (
                         <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
                     ))}
                 </Bar>
@@ -55,10 +57,10 @@ const Chart = () => {
 
 };
 Chart.propTypes = {
-    fill: PropTypes.string.isRequired,
-    x: PropTypes.number.isRequired,
-    y: PropTypes.number.isRequired,
-    width: PropTypes.number.isRequired,
-    height: PropTypes.number.isRequired,
+    fill: PropTypes.string,
+    x: PropTypes.number,
+    y: PropTypes.number,
+    width: PropTypes.number,
+    height: PropTypes.number
 };
 export default Chart;

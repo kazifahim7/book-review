@@ -6,12 +6,16 @@ import WishStore from "../components/WishStore";
 
 const Wishlist = () => {
     const books = useLoaderData()
-    const [wish, setwish] = useState([])
+    const [wish, setWish] = useState([])
     useEffect(() => {
-        const storeReadB0oks = getWishBooks();
-        const exits = books.filter((book) => storeReadB0oks.includes(book.bookId))
-        setwish(exits)
-    }, [books])
+        if (Array.isArray(books)) { 
+            const storedWishBooks = getWishBooks();
+            const exists = books.filter((book) => storedWishBooks.includes(book.bookId));
+            setWish(exists);
+        } else {
+            setWish([]); 
+        }
+    }, [books]);
     return (
         <div>
 

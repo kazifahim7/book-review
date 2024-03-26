@@ -10,10 +10,14 @@ const ReadBooks = () => {
     const books = useLoaderData()
     const [read, setRead] = useState([])
     useEffect(() => {
-        const storeReadB0oks = getReadBooks();
-        const exits = books.filter((book) => storeReadB0oks.includes(book.bookId))
-        setRead(exits)
-    }, [books])
+        if (Array.isArray(books)) { 
+            const storeReadBooks = getReadBooks();
+            const exists = books.filter((book) => storeReadBooks.includes(book.bookId));
+            setRead(exists);
+        } else {
+            setRead([]); 
+        }
+    }, [books]);
     return (
         <div>
             
