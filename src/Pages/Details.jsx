@@ -5,6 +5,10 @@ import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { setBookById } from "../utility/localStorage";
 import { setReadBookById } from "../utility/ReadStorage";
+import { setWishBookById } from "../utility/wish";
+
+
+
 
 
 const Details = () => {
@@ -13,14 +17,20 @@ const Details = () => {
     const num = parseInt(bookId);
     const book = allBooks.find((books) => books.bookId === num);
     console.log(book);
-    const handleClick = ()=>{
-        
-        setBookById(num)
-        setReadBookById(num)
+
+   
+
+    const handleReadClick = () => {
+      
+        setBookById(num);
+        setReadBookById(num);
         
     }
-    const handleCLick2 =()=>{
+
+    const handleWishlistClick = () => {
+       
         setBookById(num)
+        setWishBookById(num);
     }
 
     return (
@@ -48,12 +58,13 @@ const Details = () => {
                         <p className="space-x-2"> <span>Rating: </span>   <strong>{book.rating}</strong></p>
                     </div>
                     <div className="card-actions justify-start">
-                        <button onClick={handleClick} className="btn btn-outline">Read</button>
-                        <ToastContainer></ToastContainer>
-                        <button onClick={handleCLick2} className="btn btn-primary">Wishlist</button>
-                        <ToastContainer></ToastContainer>
+                        <button onClick={handleReadClick} className="btn btn-outline">Read</button>
+
+                        <button onClick={handleWishlistClick} className="btn btn-primary">Wishlist</button>
+
                     </div>
                 </div>
+                <ToastContainer></ToastContainer>
             </div>
 
 

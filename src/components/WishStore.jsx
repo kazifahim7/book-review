@@ -1,10 +1,11 @@
-import PropTypes from 'prop-types';
-import { CiLocationOn } from "react-icons/ci";
 import { CgProfile } from "react-icons/cg";
+import { CiLocationOn } from "react-icons/ci";
 import { RiProfileLine } from "react-icons/ri";
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
-const ReadStore = ({ book }) => {
+
+const WishStore = ({ book }) => {
     return (
         <div>
             <div className="card card-side p-10 bg-base-100 shadow-xl mb-2">
@@ -45,9 +46,9 @@ const ReadStore = ({ book }) => {
         </div>
     );
 };
-ReadStore.propTypes = {
+WishStore.propTypes = {
     book: PropTypes.object.isRequired,
 
 }
 
-export default ReadStore;
+export default WishStore;

@@ -13,41 +13,55 @@ import BestWriter from './components/BestWriter';
 import NewBook from './components/Newbook';
 import BookList from './Pages/BookList';
 import ReadBooks from './Pages/ReadBooks';
+import Wishlist from './Pages/Wishlist';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayOut></MainLayOut>,
-    errorElement : <ErrorPage></ErrorPage>,
-    children :[
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
       {
-        path : '/',
-        element:<Home></Home>,
-        loader : ()=>fetch('../books.json'),
+        path: '/',
+        element: <Home></Home>,
+        loader: () => fetch('../books.json'),
       },
       {
         path: '/books/:bookId',
-        element :<Details></Details>,
-        loader : ()=>fetch('../books.json')
-        
-      },
-      {
-        path: '/writer',
-        element : <BestWriter></BestWriter>,
-      },
-      {
-        path: '/upcoming',
-        element : <NewBook></NewBook>,
+        element: <Details></Details>,
+        loader: () => fetch('../books.json')
 
       },
       {
-        path:'/listed',
-        element : <BookList></BookList>,
-        children :[
+        path: '/writer',
+        element: <BestWriter></BestWriter>,
+      },
+      {
+        path: '/upcoming',
+        element: <NewBook></NewBook>,
+
+      },
+      {
+        path: '/listed',
+        element: <BookList></BookList>,
+        children: [
           {
-            index:true,
-            element :<ReadBooks></ReadBooks>,
-            loader :()=>fetch('/books.json'),
+            index: true,
+            element: <ReadBooks></ReadBooks>,
+            loader: () => fetch('/books.json'),
+           
+
+
+          },
+          {
+            path : 'wish',
+            element : <Wishlist></Wishlist>,
+            loader: () => fetch('/books.json'),
+
           }
+          
+          
+
+
         ]
       }
 
