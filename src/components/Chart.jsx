@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getReadBooks } from "../utility/ReadStorage";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Cell, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Cell} from 'recharts';
 import PropTypes from 'prop-types';
 
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];

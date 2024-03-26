@@ -13,8 +13,24 @@ const ReadBooks = () => {
         if (Array.isArray(books)) {
             const storeReadBooks = getReadBooks();
             const exists = books.filter((book) => storeReadBooks.includes(book.bookId));
-            setRead(sortBy === "rating"  ? exists.sort((a, b) => b.rating - a.rating) : exists);
-        } else {
+            let sortedBooks = [];
+
+            if (sortBy === "rating") {
+                sortedBooks = exists.sort((a, b) => b.rating - a.rating);
+               
+            }
+            else if (sortBy === "totalPages") {
+                sortedBooks = exists.sort((a, b) => b.totalPages - a.totalPages);
+            }
+            else if (sortBy === "yearOfPublishing") {
+                sortedBooks = exists.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
+            }
+            else {
+                sortedBooks = exists;
+            }
+            setRead(sortedBooks);
+        }
+        else {
             setRead([]);
         }
     }, [books, sortBy]);

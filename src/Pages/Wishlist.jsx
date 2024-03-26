@@ -14,16 +14,25 @@ const Wishlist = () => {
         if (Array.isArray(books)) { 
             const storedWishBooks = getWishBooks();
             const exists = books.filter((book) => storedWishBooks.includes(book.bookId));
-            if(sort==="rating"){
-                setWish(exists.sort((a, b) => b.rating -  a.rating))
+            let sortedBooks = [];
+
+            if (sort === "rating") {
+                sortedBooks = exists.sort((a, b) => b.rating - a.rating);
 
             }
-            else{
-                setWish(exists)
+            else if (sort === "totalPages") {
+                sortedBooks = exists.sort((a, b) => b.totalPages - a.totalPages);
             }
-            
-        } else {
-            setWish([]); 
+            else if (sort === "yearOfPublishing") {
+                sortedBooks = exists.sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
+            }
+            else {
+                sortedBooks = exists;
+            }
+            setWish(sortedBooks);
+        }
+        else {
+            setWish([]);
         }
     }, [books,sort]);
     
