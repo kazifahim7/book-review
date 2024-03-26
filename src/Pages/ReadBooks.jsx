@@ -14,7 +14,8 @@ const ReadBooks = () => {
             const storeReadBooks = getReadBooks();
             const exists = books.filter((book) => storeReadBooks.includes(book.bookId));
             setRead(exists);
-        } else {
+        } 
+        else {
             setRead([]); 
         }
     }, [books]);

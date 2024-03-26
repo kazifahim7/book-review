@@ -16,7 +16,7 @@ const Details = () => {
     const { bookId } = useParams();
     const num = parseInt(bookId);
     const book = allBooks.find((books) => books.bookId === num);
-    console.log(book);
+    
 
    
 
@@ -29,7 +29,7 @@ const Details = () => {
 
     const handleWishlistClick = () => {
        
-        setBookById(num)
+        setBookById(num);
         setWishBookById(num);
     }
 

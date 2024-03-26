@@ -14,7 +14,7 @@ const getWishBooks = () => {
 }
 
 const setWishBookById = id => {
-    const storeBooks = getReadBooks();
+    const storeBooks = getWishBooks();
 
     const macth = storeBooks.find((books) => books === id)
     if (!macth) {

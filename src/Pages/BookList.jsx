@@ -6,11 +6,6 @@ import { Link, Outlet } from "react-router-dom";
 const BookList = () => {
     const [active, setActive] = useState(true);
     
-    
-
-
-
-
 
 
     return (
@@ -29,7 +24,7 @@ const BookList = () => {
                 </details>
             </div>
             <div className="flex items-center ml-10  overflow-x-auto overflow-y-hidden justify-start flex-nowrap text-black">
-                <Link to='' onClick={() => setActive(true)}
+                <Link to=''  onClick={() => setActive(true)}
 
 
                     rel="noopener noreferrer" className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${active && 'border border-b-0'}text-gray-400 rounded-t-lg`}>

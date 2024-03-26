@@ -52,7 +52,7 @@ const router = createBrowserRouter([
         element: <BookList></BookList>,
         children: [
           {
-            index: true,
+            index:true ,
             element: <ReadBooks></ReadBooks>,
             loader: () => fetch('./books.json'),
            
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
 
           },
           {
-            path : 'wish',
+            path: 'wish',
             element : <Wishlist></Wishlist>,
             loader: () => fetch('./books.json'),
 
