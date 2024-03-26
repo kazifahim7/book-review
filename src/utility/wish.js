@@ -27,7 +27,7 @@ const setWishBookById = id => {
 
     }
     else {
-        localStorage.setItem('readBook', JSON.stringify(storeBooks))
+        localStorage.removeItem('wishBook')
 
 
     }
