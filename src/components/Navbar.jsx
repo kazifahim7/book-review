@@ -13,7 +13,7 @@ const Navbar = () => {
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             <NavLink to={'/'}>Home</NavLink>
                             <NavLink to={'/listed'}>Listed Books</NavLink>
-                            <NavLink to={'/read'}>Pages to Read</NavLink>
+                            <NavLink to={'read'}>Pages to Read</NavLink>
                             <NavLink to={'/writer'}>Writer</NavLink>
                             <NavLink to={'/upcoming'}><p>New Book <sup>coming</sup></p></NavLink>
                         </ul>
@@ -24,7 +24,7 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal px-1 space-x-4 font-bold text-xl">
                         <NavLink to={'/'}>Home</NavLink>
                         <NavLink to={'/listed'}>Listed Books</NavLink>
-                        <NavLink to={'/read'}>Pages to Read</NavLink>
+                        <NavLink to={'read'}>Pages to Read</NavLink>
                         <NavLink to={'/writer'}>Writer</NavLink>
                         <NavLink to={'/upcoming'}><p>New Book <sup className="text-red-400">coming</sup></p></NavLink>
 

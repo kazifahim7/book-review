@@ -17,7 +17,7 @@ import Wishlist from './Pages/Wishlist';
 import Chart from './components/Chart';
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <MainLayOut></MainLayOut>,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
@@ -26,12 +26,7 @@ const router = createBrowserRouter([
         element: <Home></Home>,
         loader: () => fetch('/books.json'),
       },
-      {
-        path: '/read',
-        element : <Chart></Chart>,
-        loader: () => fetch('/books.json'),
-
-      },
+      
       {
         path: '/books/:bookId',
         element: <Details></Details>,
@@ -45,6 +40,12 @@ const router = createBrowserRouter([
       {
         path: '/upcoming',
         element: <NewBook></NewBook>,
+
+      },
+      {
+        path: 'read',
+        element: <Chart></Chart>,
+        loader: () => fetch('/books.json'),
 
       },
       {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getReadBooks } from "../utility/ReadStorage";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Cell } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Cell, ResponsiveContainer } from 'recharts';
 import PropTypes from 'prop-types';
 
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
@@ -33,13 +33,16 @@ const Chart = () => {
     };
 
     return (
-        <div className="container mx-auto  flex justify-center items-center">
+        <div className="md:container mx-auto sm:w-full  flex justify-center items-center">
+
             <BarChart
-                width={700}
+
+                width={600}
                 height={300}
                 data={booksData}
-                margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+                margin={{ top: 10, right: 20, left: 10, bottom: 3 }}
             >
+
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="bookName" />
                 <YAxis />
@@ -49,7 +52,9 @@ const Chart = () => {
                         <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
                     ))}
                 </Bar>
+
             </BarChart>
+
 
 
         </div>
