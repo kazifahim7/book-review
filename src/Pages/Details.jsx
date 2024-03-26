@@ -4,6 +4,7 @@ import { ToastContainer} from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 import { setBookById } from "../utility/localStorage";
+import { setReadBookById } from "../utility/ReadStorage";
 
 
 const Details = () => {
@@ -15,6 +16,7 @@ const Details = () => {
     const handleClick = ()=>{
         
         setBookById(num)
+        setReadBookById(num)
         
     }
     const handleCLick2 =()=>{
