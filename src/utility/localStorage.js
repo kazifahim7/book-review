@@ -1,4 +1,4 @@
-import { toast } from "react-toastify";
+
 
 
 
@@ -21,15 +21,15 @@ const setBookById = id => {
         storeBooks.push(id);
         localStorage.setItem('book', JSON.stringify(storeBooks))
         
-        toast.success('This book is added to list.');
+        // toast.success('This book is added to list.');
 
 
 
 
     }
-    else{
-        toast.error('This book is already added to  list.');
-    }
+    // else{
+    //     toast.error('This book is already added to  list.');
+    // }
 
 
 

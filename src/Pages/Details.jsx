@@ -1,11 +1,12 @@
 
 import { useLoaderData, useParams } from "react-router-dom";
-import { ToastContainer} from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 import { setBookById } from "../utility/localStorage";
 import { setReadBookById } from "../utility/ReadStorage";
 import { setWishBookById } from "../utility/wish";
+import { useState } from "react";
 
 
 
@@ -16,21 +17,50 @@ const Details = () => {
     const { bookId } = useParams();
     const num = parseInt(bookId);
     const book = allBooks.find((books) => books.bookId === num);
-    
+    const [addReadList, setReadList] = useState(false)
+    const [addWishList, setWishList] = useState(false)
 
-   
+
+
 
     const handleReadClick = () => {
-      
-        setBookById(num);
-        setReadBookById(num);
-        
+
+        if (!addReadList) {
+
+            setBookById(num);
+            setReadBookById(num);
+            setReadList(true)
+            toast.success('Book added to Read!')
+
+        }
+        else {
+            console.log(addReadList)
+            toast.warn('already added!')
+        }
+
+
+
     }
 
     const handleWishlistClick = () => {
-       
-        setBookById(num);
-        setWishBookById(num);
+        if (!addWishList && !addReadList) {
+            setBookById(num);
+            setWishBookById(num);
+            setWishList(true)
+            toast.success('Book added to Wishlist!')
+
+
+        }
+        else if (addReadList) {
+            toast.warn('already added!')
+
+
+        }
+        else {
+            toast.warn('This book has already been added to Wishlist!');
+        }
+
+
     }
 
     return (

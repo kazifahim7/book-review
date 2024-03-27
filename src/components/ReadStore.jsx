@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 
 const ReadStore = ({ book }) => {
     return (
-        <div>
-            <div className="card card-side p-10 bg-base-100 shadow-xl mb-2">
-                <figure><img src={book.image} alt="Movie" /></figure>
+        <div className='w-full'>
+            <div className="card card-side   p-10 bg-base-100 shadow-xl mb-2">
+                <figure className=''><img src={book.image} alt="picture" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{book.bookName}</h2>
                     <div className='flex gap-4 items-center'>
