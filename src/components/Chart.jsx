@@ -37,17 +37,17 @@ const Chart = () => {
 
             <BarChart
 
-                width={600}
-                height={300}
+                width={900}
+                height={400}
                 data={booksData}
-                margin={{ top: 10, right: 20, left: 10, bottom: 3 }}
+                margin={{ top: 20, right: 10, left: 10, bottom: 3 }}
             >
 
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="bookName" />
                 <YAxis />
                 <Tooltip />
-                <Bar dataKey="totalPages" fill="#8884d8" shape={<TriangleBar />}>
+                <Bar dataKey="totalPages" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
                     {booksData.map((get, index) => (
                         <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
                     ))}
