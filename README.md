@@ -11,7 +11,7 @@ Currently, two official plugins are available:
 
 # Book Vibe - our Online Bookstore
 
-[Live Site](https://www.bookworm.com)
+[Live Site](https://b9-a8-bookvibe.netlify.app/)
 
 ## Features
 
