@@ -30,10 +30,8 @@ const ReadBooks = () => {
             }
             setRead(sortedBooks);
         }
-        else {
-            setRead([]);
-        }
-    }, [books, sortBy]);
+        
+    }, [sortBy,books]);
 
     const handleSort = (text) => {
         setSortBy(text);
