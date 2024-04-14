@@ -15,6 +15,8 @@ import BookList from './Pages/BookList';
 import ReadBooks from './Pages/ReadBooks';
 import Wishlist from './Pages/Wishlist';
 import Chart from './components/Chart';
+import SignUp from './components/authentication/SignUp';
+import SignIn from './components/authentication/SignIn';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -25,6 +27,16 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home></Home>,
         loader: () => fetch('/books.json'),
+      },
+      {
+        path:'/signUp',
+        element:<SignUp></SignUp>
+
+      },
+      {
+        path:'/signIn',
+        element:<SignIn></SignIn>,
+
       },
       {
         path: '/upcoming',

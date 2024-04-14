@@ -31,8 +31,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn bg-[#23BE0A]">Sign up</a>
-                    <a className="btn bg-[#59C6D2]">Sign in</a>
+                    <NavLink to={'/signUp'} className="btn bg-[#23BE0A]">Sign up</NavLink>
+                    <NavLink to={'/signIn'} className="btn bg-[#59C6D2]">Sign in</NavLink>
                 </div>
             </div>
 
